@@ -12,7 +12,7 @@ const AddCourse = () => {
             </div>
           </div>
         </div>
-        <div>
+        {/* <div>
           <p>Code Upload Tips</p>
           <ul>
             <li>Set the course price option or make it free</li>
@@ -30,7 +30,7 @@ const AddCourse = () => {
             <li>Make Announcements to notify any important</li>
             <li>Notes to all enrolled students at once.</li>
           </ul>
-        </div>
+        </div> */}
       </div>
     </>
   );
