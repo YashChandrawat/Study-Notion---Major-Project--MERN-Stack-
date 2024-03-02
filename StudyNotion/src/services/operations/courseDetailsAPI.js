@@ -140,8 +140,12 @@ export const createSection = async (data, token) => {
     if (!response?.data?.success) {
       throw new Error("Could Not Create Section");
     }
+    // console.log(
+    //   "We want is : ",
+    //   response.data.updatedCourseDetails.courseContent
+    // );
     toast.success("Course Section Created");
-    result = response?.data?.updatedCourse;
+    result = response?.data?.updatedCourseDetails;
   } catch (error) {
     console.log("CREATE SECTION API ERROR............", error);
     toast.error(error.message);
