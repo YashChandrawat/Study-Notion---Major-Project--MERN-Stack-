@@ -232,12 +232,12 @@ exports.getFullCourseDetails = async (req, res) => {
       })
       .exec();
 
-    let courseProgressCount = await CourseProgress.findOne({
-      courseID: courseId,
-      userId: userId,
-    });
+    // let courseProgressCount = await CourseProgress.findOne({
+    //   courseID: courseId,
+    //   userId: userId,
+    // });
 
-    console.log("courseProgressCount : ", courseProgressCount);
+    // console.log("courseProgressCount : ", courseProgressCount);
 
     if (!courseDetails) {
       return res.status(400).json({
@@ -253,24 +253,24 @@ exports.getFullCourseDetails = async (req, res) => {
     //   });
     // }
 
-    let totalDurationInSeconds = 0;
-    courseDetails.courseContent.forEach((content) => {
-      content.subSection.forEach((subSection) => {
-        const timeDurationInSeconds = parseInt(subSection.timeDuration);
-        totalDurationInSeconds += timeDurationInSeconds;
-      });
-    });
+    // let totalDurationInSeconds = 0;
+    // courseDetails.courseContent.forEach((content) => {
+    //   content.subSection.forEach((subSection) => {
+    //     const timeDurationInSeconds = parseInt(subSection.timeDuration);
+    //     totalDurationInSeconds += timeDurationInSeconds;
+    //   });
+    // });
 
-    const totalDuration = convertSecondsToDuration(totalDurationInSeconds);
+    // const totalDuration = convertSecondsToDuration(totalDurationInSeconds);
 
     return res.status(200).json({
       success: true,
       data: {
         courseDetails,
-        totalDuration,
-        completedVideos: courseProgressCount?.completedVideos
-          ? courseProgressCount?.completedVideos
-          : [],
+        // totalDuration,
+        // completedVideos: courseProgressCount?.completedVideos
+        //   ? courseProgressCount?.completedVideos
+        //   : [],
       },
     });
   } catch (error) {
@@ -319,28 +319,28 @@ exports.deleteCourse = async (req, res) => {
     }
 
     // Unenroll students from the course
-    const studentsEnrolled = course.studentsEnroled;
-    for (const studentId of studentsEnrolled) {
-      await User.findByIdAndUpdate(studentId, {
-        $pull: { courses: courseId },
-      });
-    }
+    // const studentsEnrolled = course.studentsEnrolled;
+    // for (const studentId of studentsEnrolled) {
+    //   await User.findByIdAndUpdate(studentId, {
+    //     $pull: { courses: courseId },
+    //   });
+    // }
 
     // Delete sections and sub-sections
-    const courseSections = course.courseContent;
-    for (const sectionId of courseSections) {
-      // Delete sub-sections of the section
-      const section = await Section.findById(sectionId);
-      if (section) {
-        const subSections = section.subSection;
-        for (const subSectionId of subSections) {
-          await SubSection.findByIdAndDelete(subSectionId);
-        }
-      }
+    // const courseSections = course.courseContent;
+    // for (const sectionId of courseSections) {
+    //   // Delete sub-sections of the section
+    //   const section = await Section.findById(sectionId);
+    //   if (section) {
+    //     const subSections = section.subSection;
+    //     for (const subSectionId of subSections) {
+    //       await SubSection.findByIdAndDelete(subSectionId);
+    //     }
+    //   }
 
-      // Delete the section
-      await Section.findByIdAndDelete(sectionId);
-    }
+    //   // Delete the section
+    //   await Section.findByIdAndDelete(sectionId);
+    // }
 
     // Delete the course
     await Course.findByIdAndDelete(courseId);
