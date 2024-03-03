@@ -159,14 +159,14 @@ const CourseInformationForm = () => {
       className="rounded-md border-richblack-700 bg-richblack-800 p-6 space-y-8"
     >
       <div>
-        <label htmlFor="courseTitle">
+        <label htmlFor="courseTitle" className="font-semibold text-md">
           Course Title<sup>*</sup>
         </label>
         <input
           id="courseTitle"
           placeholder="Enter Course Title"
           {...register("courseTitle", { required: true })}
-          className="w-full bg-richblack-300 text-richblack-800 placeholder:text-richblack-600 p-2 rounded-md"
+          className="w-full bg-richblack-700  mt-2 p-2 rounded-md"
         />
         {errors.courseTitle && (
           <span>
@@ -175,14 +175,14 @@ const CourseInformationForm = () => {
         )}
       </div>
       <div>
-        <label htmlFor="courseShortDesc">
+        <label htmlFor="courseShortDesc" className="font-semibold">
           Course Short Description<sup>*</sup>
         </label>
         <textarea
           id="courseShortDesc"
           placeholder="Enter Description"
           {...register("courseShortDesc", { required: true })}
-          className="w-full min-h-[140px]  bg-richblack-300 text-richblack-800 placeholder:text-richblack-600 p-2 rounded-md"
+          className="w-full min-h-[140px] bg-richblack-700  mt-2 p-2 rounded-md"
         ></textarea>
         {errors.courseShortDesc && (
           <span>
@@ -191,7 +191,10 @@ const CourseInformationForm = () => {
         )}
       </div>
       <div className="flex flex-col space-y-2">
-        <label className="text-sm text-richblack-5" htmlFor="coursePrice">
+        <label
+          className="text-md text-richblack-5  font-semibold"
+          htmlFor="coursePrice"
+        >
           Course Price <sup className="text-pink-200">*</sup>
         </label>
         <div className="relative">
@@ -206,9 +209,9 @@ const CourseInformationForm = () => {
                 value: /^(0|[1-9]\d*)(\.\d+)?$/,
               },
             })}
-            className="form-style w-full !pl-12 bg-richblack-300 text-richblack-800 placeholder:text-richblack-600 p-2 rounded-md"
+            className="form-style w-full bg-richblack-700  !pl-12 p-2 rounded-md"
           />
-          <HiOutlineCurrencyRupee className="absolute left-3 top-1/2 inline-block -translate-y-1/2 text-2xl text-richblack-800" />
+          <HiOutlineCurrencyRupee className="absolute left-3 top-1/2 inline-block -translate-y-1/2 text-2xl text-richblack-100" />
         </div>
         {errors.coursePrice && (
           <span className="ml-2 text-xs tracking-wide text-pink-200">
@@ -217,14 +220,17 @@ const CourseInformationForm = () => {
         )}
       </div>
       <div className="flex flex-col space-y-2">
-        <label className="text-sm text-richblack-5 " htmlFor="courseCategory">
+        <label
+          className="text-md text-richblack-5 font-semibold"
+          htmlFor="courseCategory"
+        >
           Course Category <sup className="text-pink-200">*</sup>
         </label>
         <select
           {...register("courseCategory", { required: true })}
           defaultValue=""
           id="courseCategory"
-          className="form-style w-full bg-richblack-300 p-2 text-richblack-700 rounded-md"
+          className="form-style w-full bg-richblack-700  mt-2  p-2 rounded-md"
         >
           <option value="" disabled className="text-richblack-600">
             Choose a Category
@@ -264,14 +270,14 @@ const CourseInformationForm = () => {
       />
 
       <div>
-        <label>
+        <label className="font-semibold text-md">
           Benifits of the Course<sup>*</sup>{" "}
         </label>
         <textarea
           id="courseBenifits"
           placeholder="Enter the Benifits of the Course"
           {...register("courseBenifits", { required: true })}
-          className="min-h-[130px] w-full bg-richblack-300 text-richblack-800 placeholder:text-richblack-800 p-2 rounded-md"
+          className="min-h-[130px] w-full bg-richblack-700 mt-2 p-2 rounded-md"
         ></textarea>
         {errors.courseBenefits && (
           <span>Benefits of the course are required</span>

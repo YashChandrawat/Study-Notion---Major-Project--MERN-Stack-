@@ -3,8 +3,8 @@ import { useDropzone } from "react-dropzone";
 import { FiUploadCloud } from "react-icons/fi";
 import { useSelector } from "react-redux";
 
-// import "video-react/dist/video-react.css";
-// import { Player } from "video-react";
+import "video-react/dist/video-react.css";
+import { Player } from "video-react";
 
 export default function Upload({
   name,
@@ -59,7 +59,7 @@ export default function Upload({
 
   return (
     <div className="flex flex-col space-y-2">
-      <label className="text-md text-richblack-5 font-semibold" htmlFor={name}>
+      <label className="text-sm text-richblack-5" htmlFor={name}>
         {label} {!viewData && <sup className="text-pink-200">*</sup>}
       </label>
       <div

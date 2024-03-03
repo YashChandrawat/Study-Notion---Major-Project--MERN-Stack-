@@ -54,7 +54,7 @@ const ChipInput = ({
   return (
     <div className="flex flex-col space-y-2">
       {/* Render the label for the input */}
-      <label className="text-sm text-richblack-5" htmlFor={name}>
+      <label className="text-md text-richblack-5 font-semibold" htmlFor={name}>
         {label} <sup className="text-pink-200">*</sup>
       </label>
       {/* Render the capsule and input */}
@@ -84,7 +84,7 @@ const ChipInput = ({
           type="text"
           placeholder={placeholder}
           onKeyDown={handleKeyDown}
-          className="form-style w-full p-2 rounded-md bg-richblack-200 placeholder:text-richblack-700 text-richblack-800"
+          className="form-style w-full p-2 rounded-md bg-richblack-700"
         />
       </div>
       {/* Render an error message if the input is required and not filled */}

@@ -170,7 +170,7 @@ export const createSubSection = async (data, token) => {
     result = response?.data?.data;
   } catch (error) {
     console.log("CREATE SUB-SECTION API ERROR............", error);
-    toast.error(error.message);
+    toast.error("Failed to create sub section");
   }
   toast.dismiss(toastId);
   return result;
