@@ -9,10 +9,10 @@ import {
   updateSubSection,
 } from "../../../../../services/operations/courseDetailsAPI";
 import { setCourse } from "../../../../../slices/courseSlice";
-import IconBtn from "../../../../Common/IconBtn";
+import IconBtn from "../../../../common/IconBtn";
 import Upload from "../Upload";
 
-export default function SubSectionModal({
+export default function SubSectionModal({ 
   modalData,
   setModalData,
   add = false,
@@ -163,7 +163,7 @@ export default function SubSectionModal({
               id="lectureTitle"
               placeholder="Enter Lecture Title"
               {...register("lectureTitle", { required: true })}
-              className="form-style w-full"
+              className="form-style w-full text-richblack-800"
             />
             {errors.lectureTitle && (
               <span className="ml-2 text-xs tracking-wide text-pink-200">
@@ -182,7 +182,7 @@ export default function SubSectionModal({
               id="lectureDesc"
               placeholder="Enter Lecture Description"
               {...register("lectureDesc", { required: true })}
-              className="form-style resize-x-none min-h-[130px] w-full"
+              className="form-style resize-x-none min-h-[130px] w-full text-richblack-800"
             />
             {errors.lectureDesc && (
               <span className="ml-2 text-xs tracking-wide text-pink-200">

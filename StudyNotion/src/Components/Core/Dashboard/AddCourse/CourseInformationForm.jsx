@@ -11,7 +11,7 @@ import ChipInput from "./ChipInput";
 import Upload from "./UploadThumbnail";
 import RequirementField from "./RequirementField";
 import { setCourse, setStep } from "../../../../slices/courseSlice";
-import IconBtn from "../../../Common/IconBtn";
+import IconBtn from "../../../common/IconBtn";
 import toast from "react-hot-toast";
 import { COURSE_STATUS } from "../../../../utils/constants";
 const CourseInformationForm = () => {
