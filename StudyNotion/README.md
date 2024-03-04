@@ -31,3 +31,7 @@ Ramanak Progress Bar is used here in the project for the prebuiled progress bar
 # React-Rating-Stars
 
 We used React rating stars library for the rating and review purpose.
+
+# Payment
+
+Url : https://razorpay.com/docs/partners/aggregators/partner-auth/payment-gateway/
