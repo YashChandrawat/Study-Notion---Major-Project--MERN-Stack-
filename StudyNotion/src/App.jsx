@@ -22,6 +22,7 @@ import { useSelector } from "react-redux";
 import AddCourse from "./Components/Core/Dashboard/AddCourse";
 import MyCourses from "./Components/Core/Dashboard/MyCourses";
 import EditCourse from "./Components/Core/Dashboard/EditCourse";
+import Catalog from "./Pages/Catalog";
 
 function App() {
   const { user } = useSelector((state) => state.profile);
@@ -30,6 +31,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/catalog/:catalogName" element={<Catalog />} />
         <Route
           path="/login"
           element={
@@ -95,7 +97,10 @@ function App() {
             <>
               <Route path="dashboard/add-course" element={<AddCourse />} />
               <Route path="dashboard/my-courses" element={<MyCourses />} />
-              <Route path="dashboard/edit-course/:courseId" element={<EditCourse />} />
+              <Route
+                path="dashboard/edit-course/:courseId"
+                element={<EditCourse />}
+              />
             </>
           )}
         </Route>
