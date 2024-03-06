@@ -2,7 +2,6 @@ import FoundingStory from "../assets/Images/FoundingStory.png";
 import BannerImage1 from "../assets/Images/aboutus1.webp";
 import BannerImage2 from "../assets/Images/aboutus2.webp";
 import BannerImage3 from "../assets/Images/aboutus3.webp";
-// import Footer from "../components/common/Footer"
 import ContactFormSection from "../Components/Core/AboutPage/ContactFormSection";
 import LearningGrid from "../Components/Core/AboutPage/LearningGrid";
 import Quote from "../Components/Core/AboutPage/Quote";

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-import IconBtn from "../../../../common/IconBtn";
+import IconBtn from "../../../../Common/IconBtn";
 import { resetCourseState, setStep } from "../../../../../slices/courseSlice";
 import { COURSE_STATUS } from "../../../../../utils/constants";
 import { editCourseDetails } from "../../../../../services/operations/courseDetailsAPI";
@@ -15,10 +15,10 @@ const PublishCourse = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    if(course?.status === COURSE_STATUS.PUBLISHED) {
+    if (course?.status === COURSE_STATUS.PUBLISHED) {
       setValue("public", true);
     }
-  },[])
+  }, []);
 
   const goBack = () => {
     dispatch(setStep(2));
@@ -27,11 +27,14 @@ const PublishCourse = () => {
   const goToCourse = () => {
     dispatch(resetCourseState());
     // navigate("/dashboard/my-courses")
-  }
+  };
 
   const handleCoursePublish = async () => {
-    if(course?.status === COURSE_STATUS.PUBLISHED && getValues("public") === true ||
-    (course.status === COURSE_STATUS.DRAFT && getValues("public") === false)) {
+    if (
+      (course?.status === COURSE_STATUS.PUBLISHED &&
+        getValues("public") === true) ||
+      (course.status === COURSE_STATUS.DRAFT && getValues("public") === false)
+    ) {
       // no updation is form
       // no need to make api call
       goToCourse();
@@ -40,17 +43,19 @@ const PublishCourse = () => {
     // if Form is updated
     const formData = new FormData();
     formData.append("courseId", course._id);
-    const courseStatus = getValues("public") ? COURSE_STATUS.PUBLISHED : COURSE_STATUS.DRAFT; 
+    const courseStatus = getValues("public")
+      ? COURSE_STATUS.PUBLISHED
+      : COURSE_STATUS.DRAFT;
     formData.append("status", courseStatus);
 
     setLoading(true);
     const result = await editCourseDetails(formData, token);
 
-    if(result) {
+    if (result) {
       goToCourse();
     }
     setLoading(false);
-  }
+  };
 
   const onSubmit = () => {
     handleCoursePublish();
@@ -68,7 +73,9 @@ const PublishCourse = () => {
               {...register("public")}
               className="rounded h-4 w-4"
             />
-            <span className="ml-2 text-richclack-400">Make this Course as Public</span>
+            <span className="ml-2 text-richclack-400">
+              Make this Course as Public
+            </span>
           </label>
         </div>
 

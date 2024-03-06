@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Footer from "../components/common/Footer";
+import Footer from "../Components/Common/Footer";
 import { useParams } from "react-router-dom";
-import { apiConnector } from "../services/apiconnector";
+import { apiConnector } from "../services/apiConnector";
 import { categories } from "../services/apis";
 import { getCatalogaPageData } from "../services/operations/pageAndComponentData";
 import Course_Card from "../Components/Core/Catalog/Course_Card";
