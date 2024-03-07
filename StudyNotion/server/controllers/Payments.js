@@ -164,6 +164,7 @@ const enrollStudents = async (courses, userId, res) => {
           .json({ success: false, error: "Course not found" });
       }
       console.log("Updated course: ", enrolledCourse);
+      console.log("courseID : ", courseId);
 
       const courseProgress = await CourseProgress.create({
         courseID: courseId,
