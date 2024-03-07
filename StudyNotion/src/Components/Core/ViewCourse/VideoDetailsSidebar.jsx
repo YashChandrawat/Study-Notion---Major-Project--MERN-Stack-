@@ -39,7 +39,7 @@ export default function VideoDetailsSidebar({ setReviewModal }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [courseSectionData, courseEntireData, location.pathname]);
 
-  console.log("Course Section Daata at Page : ", courseSectionData);
+  // console.log("Course Section Daata at Page : ", courseSectionData);
   return (
     <>
       <div className="flex h-[calc(100vh-3.5rem)] w-[320px] max-w-[350px] flex-col border-r-[1px] border-r-richblack-700 bg-richblack-800">

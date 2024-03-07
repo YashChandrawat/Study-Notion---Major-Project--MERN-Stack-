@@ -24,11 +24,11 @@ function ReviewSlider() {
       if (data?.success) {
         setReviews(data?.data);
       }
-      console.log("Reviews Data : ", { data });
+      // console.log("Reviews Data : ", { data });
     })();
   }, []);
 
-  console.log("reviews", reviews);
+  // console.log("reviews", reviews);
 
   return (
     <div className="text-white">

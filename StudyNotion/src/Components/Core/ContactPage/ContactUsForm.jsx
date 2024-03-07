@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { apiConnector } from "../../../services/apiConnector";
 import { contactusEndpoint } from "../../../services/apis";
 import CountryCode from "../../../data/countrycode.json";
+import toast from "react-hot-toast";
 
 const ContactUsForm = () => {
   const [loading, setLoading] = useState(false);
@@ -12,22 +13,23 @@ const ContactUsForm = () => {
     reset,
     formState: { errors, isSubmitSuccessful },
   } = useForm();
-
   const submitContactForm = async (data) => {
-    console.log("Logging Data : ", data);
+    // console.log("Logging Data : ", data);
     try {
+      toast("Sending Data...");
       setLoading(true);
-      // const response = await apiConnector(
-      //   "POST",
-      //   contactusEndpoint.CONTACT_US_API,
-      //   data
-      // );
+      const response = await apiConnector(
+        "POST",
+        contactusEndpoint.CONTACT_US_API,
+        data
+      );
 
-      const response = { status: "OK" };
-      console.log("Logging Response....", response);
+      // const response = { status: "OK" };
+      // console.log("Logging Response....", response);
       setLoading(false);
+      toast.success("Email Sent Successfully");
     } catch (error) {
-      console.log("Logging Response Error : ", error.message);
+      // console.log("Logging Response Error : ", error.message);
       setLoading(false);
     }
   };

@@ -50,7 +50,7 @@ function SignupForm() {
       accountType,
     };
 
-    console.log("Signup details : ", formData);
+    // console.log("Signup details : ", formData);
 
     // Setting signup data to state
     // To be used after otp verification

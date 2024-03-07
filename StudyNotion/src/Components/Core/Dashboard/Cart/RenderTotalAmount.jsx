@@ -13,6 +13,7 @@ const RenderTotalAmount = () => {
 
   const handleBuyCourse = () => {
     const courses = cart.map((course) => course?.courseDetails?._id);
+    // console.log("course : ", courses);
     buyCourse(token, courses, user, navigate, dispatch);
   };
   return (
@@ -21,7 +22,7 @@ const RenderTotalAmount = () => {
       <p className="mb-6 text-3xl font-medium text-yellow-100">₹ {total}</p>
       <IconBtn
         text="Buy Now"
-        onclick={handleBuyCourse}
+        onclick={() => handleBuyCourse()}
         customClasses="w-full justify-center"
       />
     </div>

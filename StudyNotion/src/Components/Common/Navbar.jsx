@@ -41,12 +41,12 @@ const Navbar = () => {
       const result = await apiConnector("GET", categories.CATEGORIES_API);
       setSubLinks(result.data.data);
     } catch (error) {
-      console.log("Cannot able to fetch the category");
+      // console.log("Cannot able to fetch the category");
     }
   };
   useEffect(() => {
     fetchSubLinks();
-    console.log("User:", user?.image);
+    // console.log("User:", user?.image);
   }, []);
 
   const location = useLocation();

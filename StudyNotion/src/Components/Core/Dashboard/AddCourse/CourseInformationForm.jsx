@@ -48,7 +48,7 @@ const CourseInformationForm = () => {
         setValue("courseImage", course.thumbnail);
       }
 
-      console.log("Course Category : ", courseCategory);
+      // console.log("Course Category : ", courseCategory);
       setLoading(false);
     };
     getCategories();
@@ -149,8 +149,8 @@ const CourseInformationForm = () => {
     }
     setLoading(false);
 
-    console.log("Prinitng Form Data ", formData);
-    console.log("Prinitng Result ", result);
+    // console.log("Prinitng Form Data ", formData);
+    // console.log("Prinitng Result ", result);
   };
 
   return (

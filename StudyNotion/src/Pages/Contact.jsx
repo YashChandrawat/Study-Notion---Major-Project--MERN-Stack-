@@ -5,7 +5,7 @@ import ContactForm from "../Components/Core/ContactPage/ContactForm";
 const Contact = () => {
   return (
     <div>
-      <div className="mx-auto mt-20 flex w-11/12 max-w-maxContent flex-col justify-between gap-10 text-white lg:flex-row">
+      <div className="mx-auto mb-16 mt-20 flex w-11/12 max-w-maxContent flex-col justify-between gap-10 text-white lg:flex-row">
         {/* Contact Details */}
         {/* <div className="lg:w-[40%]">
           <ContactDetails />

@@ -92,7 +92,7 @@ export default function SubSectionModal({
   };
 
   const onSubmit = async (data) => {
-    console.log(data.lectureTitle);
+    // console.log(data.lectureTitle);
     if (view) return;
 
     if (edit) {
@@ -110,9 +110,9 @@ export default function SubSectionModal({
     formData.append("description", data.lectureDesc);
     formData.append("video", data.lectureVideo);
     setLoading(true);
-    console.log("Form Data : ", formData);
+    // console.log("Form Data : ", formData);
     const result = await createSubSection(formData, token);
-    console.log("Result inside create sub section : ", result);
+    // console.log("Result inside create sub section : ", result);
     if (result) {
       // update the structure of course
       const updatedCourseContent = course.courseContent.map((section) =>

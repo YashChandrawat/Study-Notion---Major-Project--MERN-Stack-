@@ -52,6 +52,10 @@ const CourseDetailsCard = ({
 
   const studentEnrolled = course?.courseDetails?.studentsEnrolled;
   // Ensure course.studentEnrolled is initialized properly
+  console.log(
+    "Log Data : ",
+    course?.courseDetails?.studentsEnrolled.includes(user?._id)
+  );
 
   return (
     <>
