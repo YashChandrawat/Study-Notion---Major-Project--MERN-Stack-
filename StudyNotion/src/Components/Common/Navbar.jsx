@@ -1,5 +1,6 @@
 import { Link, matchPath, useLocation } from "react-router-dom";
 import logo from "../../assets/Logo/Logo-Full-Light01.png";
+import logo2 from "../../assets/TimeLineLogo/Logo4.svg";
 import { NavbarLinks } from "../../data/navbar-links";
 import { useSelector } from "react-redux";
 import { AiOutlineShoppingCart } from "react-icons/ai";
@@ -8,6 +9,7 @@ import { useEffect, useState } from "react";
 import { apiConnector } from "../../services/apiConnector";
 import { categories } from "../../services/apis";
 import { FaChevronDown } from "react-icons/fa6";
+import { PiStudentFill } from "react-icons/pi";
 
 // const subLinks = [
 //   {
@@ -66,8 +68,17 @@ const Navbar = () => {
   return (
     <div className="flex h-14 items-center justify-center border-b-[1px] border-b-richblack-700">
       <div className="flex w-11/12 max-w-maxContent items-center justify-between">
-        <Link to={"/"}>
-          <img src={logo} alt={"logo"} width={150} height={42} />
+        <Link to={"/"} className="flex">
+          {/* <img src={logo2} alt={"logo"} width={30} height={42} /> */}
+          <PiStudentFill className="text-white size-11" />
+          <img
+            src={logo}
+            alt={"logo"}
+            width={145}
+            height={30}
+            className="mt-1"
+          />
+          {/* <p className="text-white font-semibold text-2xl">STUDY NOTION</p> */}
         </Link>
 
         {/* Nav Links */}
