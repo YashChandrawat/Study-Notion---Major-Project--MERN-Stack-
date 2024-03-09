@@ -126,12 +126,12 @@ const About = () => {
         {/* <ContactFormSection /> */}
         <div className="flex justify-evenly">
           <div
-            className="flex flex-col gap-2 mt-10
+            className="flex flex-col gap-6 mt-10
         "
           >
-            <div className="w-[100%] flex flex-col gap-2 ">
+            <div className="w-[100%] flex flex-col gap-4">
               <h1 className="text-4xl font-semibold">
-                <HighlightText text={"What to Connect with us?"} />
+                <HighlightText text={"Want to Connect with us?"} />
               </h1>
               <p className="text-md text-justify font-semibold">
                 Feel free to reach out to us anytime, and our team will be happy

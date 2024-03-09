@@ -1,5 +1,5 @@
 import { Link, matchPath, useLocation } from "react-router-dom";
-import logo from "../../assets/Logo/Logo-Full-Light.png";
+import logo from "../../assets/Logo/Logo-Full-Light01.png";
 import { NavbarLinks } from "../../data/navbar-links";
 import { useSelector } from "react-redux";
 import { AiOutlineShoppingCart } from "react-icons/ai";
@@ -67,7 +67,7 @@ const Navbar = () => {
     <div className="flex h-14 items-center justify-center border-b-[1px] border-b-richblack-700">
       <div className="flex w-11/12 max-w-maxContent items-center justify-between">
         <Link to={"/"}>
-          <img src={logo} alt={"logo"} width={160} height={42} />
+          <img src={logo} alt={"logo"} width={150} height={42} />
         </Link>
 
         {/* Nav Links */}
