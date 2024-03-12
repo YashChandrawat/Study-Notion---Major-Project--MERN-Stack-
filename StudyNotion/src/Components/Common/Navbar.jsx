@@ -29,6 +29,8 @@ import { useNavigate } from "react-router-dom";
 
 import useOnClickOutside from "../../hooks/useOnClickOutside";
 import { logout } from "../../services/operations/authAPI";
+import { FaBars } from "react-icons/fa";
+import { SideDrawer } from "./Drawer";
 
 const Navbar = () => {
   // The required data from the redux store has been fetched out here
@@ -65,16 +67,24 @@ const Navbar = () => {
   const ref = useRef(null);
 
   useOnClickOutside(ref, () => setOpen(false));
+
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+
+  const toggleDrawer = () => {
+    setIsDrawerOpen(!isDrawerOpen);
+    console.log(isDrawerOpen);
+  };
+
   return (
     <div className="flex h-14 items-center justify-center border-b-[1px] border-b-richblack-700">
       <div className="flex w-11/12 max-w-maxContent items-center justify-between">
         <Link to={"/"} className="flex">
           {/* <img src={logo2} alt={"logo"} width={30} height={42} /> */}
-          <PiStudentFill className="text-white size-11" />
+          <PiStudentFill className="text-white  size-9" />
           <img
             src={logo}
             alt={"logo"}
-            width={145}
+            width={135}
             height={30}
             className="mt-1"
           />
@@ -102,8 +112,15 @@ const Navbar = () => {
           </ul>
         </nav>
 
+        {/* Nav Links Mobile */}
+        <nav className="sm:block md:hidden">
+          <div className="text-white">
+            <SideDrawer />
+          </div>
+        </nav>
+
         {/* Login/Signup and extras */}
-        <div className="flex gap-x-4 items-center">
+        <div className="lg:flex md:flex gap-x-4 items-center hidden ">
           {user && user?.accountType != "Instructor" && (
             <Link to={"/dashboard/cart"} className="relative">
               <AiOutlineShoppingCart className="text-2xl text-richblack-100" />

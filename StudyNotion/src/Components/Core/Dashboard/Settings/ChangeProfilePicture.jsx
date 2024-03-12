@@ -1,9 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { FiUpload } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
-
 import { updateDisplayPicture } from "../../../../services/operations/SettingsAPI";
-// import IconBtn from "../../../common/IconBtn";
 
 export default function ChangeProfilePicture() {
   const { token } = useSelector((state) => state.auth);
@@ -22,7 +20,6 @@ export default function ChangeProfilePicture() {
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-    // console.log(file)
     if (file) {
       setImageFile(file);
       previewFile(file);
@@ -39,11 +36,9 @@ export default function ChangeProfilePicture() {
 
   const handleFileUpload = () => {
     try {
-      // console.log("uploading...");
       setLoading(true);
       const formData = new FormData();
       formData.append("displayPicture", imageFile);
-      // console.log("formdata", formData);
       dispatch(updateDisplayPicture(token, formData)).then(() => {
         setLoading(false);
       });
@@ -57,18 +52,19 @@ export default function ChangeProfilePicture() {
       previewFile(imageFile);
     }
   }, [imageFile]);
+
   return (
-    <>
-      <div className="flex items-center justify-between rounded-md border-[1px] border-richblack-700 bg-richblack-800 p-8 px-12 text-richblack-5">
-        <div className="flex items-center gap-x-4">
+    <div className="p-4">
+      <div className="flex flex-col gap-4">
+        <div className="flex items-center gap-4 bg-richblack-800 w-full rounded-lg border border-solid p-4 border-pure-greys-600">
           <img
             src={previewSource || user?.image}
             alt={`profile-${user?.firstName}`}
-            className="aspect-square w-[78px] rounded-full object-cover"
+            className="w-20 h-20 rounded-full object-cover"
           />
-          <div className="space-y-2">
-            <p>Change Profile Picture</p>
-            <div className="flex flex-row gap-3">
+          <div className="flex flex-col text-white">
+            <p className="font-semibold">Change Profile Picture</p>
+            <div className="flex flex-row gap-2">
               <input
                 type="file"
                 ref={fileInputRef}
@@ -79,22 +75,18 @@ export default function ChangeProfilePicture() {
               <button
                 onClick={handleClick}
                 disabled={loading}
-                className="cursor-pointer rounded-md bg-richblack-700 py-2 px-5 font-semibold text-richblack-50"
+                className="px-4 py-2 bg-richblack-700 rounded-md text-white"
               >
                 Select
               </button>
-              <div className="bg-yellow-50 px-6 rounded-md text-richblack-900">
-                <button onClick={handleFileUpload}>
+              <div className="bg-yellow-200 px-4 py-2 rounded-md text-black">
+                <button onClick={handleFileUpload} disabled={loading}>
                   {loading ? (
                     "Uploading..."
                   ) : (
-                    <div>
-                      {!loading && (
-                        <div className="flex justify-center items-center gap-2 text-bold">
-                          <span>Upload</span>
-                          <FiUpload className="text-lg text-richblack-900" />
-                        </div>
-                      )}
+                    <div className="flex items-center gap-2">
+                      <span>Upload</span>
+                      <FiUpload className="text-richblack-900" />
                     </div>
                   )}
                 </button>
@@ -103,6 +95,6 @@ export default function ChangeProfilePicture() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

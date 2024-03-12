@@ -16,6 +16,7 @@
     "react-error-overlay": "6.0.9"
   },
   "dependencies": {
+    "@material-tailwind/react": "^2.1.9",
     "@ramonak/react-progress-bar": "^5.2.0",
     "@reduxjs/toolkit": "^2.1.0",
     "axios": "^1.6.7",
