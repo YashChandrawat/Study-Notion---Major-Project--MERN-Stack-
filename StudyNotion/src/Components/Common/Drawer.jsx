@@ -33,7 +33,7 @@ export function SideDrawer() {
       <Button onClick={openDrawer}>
         <FaBars size={24} />
       </Button>
-      <Drawer open={open} onClose={closeDrawer} className="text-black z-20">
+      <Drawer open={open} onClose={closeDrawer} className="text-black z-20 ">
         <div className="mb-2 flex items-center   justify-between p-4">
           <Typography variant="h5" color="blue-gray">
             <img src={logo} alt="Logo" className="w-[150px]" />
