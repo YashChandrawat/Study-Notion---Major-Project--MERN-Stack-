@@ -1,16 +1,14 @@
-import React from "react";
-
 const ContactDetails = () => {
   return (
-    <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl mt-2">
-      <h1 className="text-blue-200 text-2xl ">GET IN TOUCH</h1>
+    <div className="mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl mt-2 md:h-screen">
+      <h1 className="text-caribbeangreen-400 text-2xl ">GET IN TOUCH</h1>
       <h1 className="text-3xl sm:text-5xl pt-5 pb-5 ">
         Love to Hear from You, Get In Touch
       </h1>
       <p>
-        Egestas faucibus nisl et ultricies. Tempus lectus condimentum tristique
-        mauris id vitae. Id pulvinar a eget vitae pellentesque ridiculus platea.
-        Vulputate cursus.
+        Thank you for your interest in our online learning platform. We're here
+        to help and answer any questions you may have. Please feel free to reach
+        out to us.
       </p>
       <img
         className="mx-auto pt-6 max-w-xs sm:max-w-full"
@@ -22,7 +20,6 @@ const ContactDetails = () => {
 };
 
 export default ContactDetails;
-
 // import * as Icon1 from "react-icons/bi";
 // import * as Icon3 from "react-icons/hi2";
 // import * as Icon2 from "react-icons/io5";

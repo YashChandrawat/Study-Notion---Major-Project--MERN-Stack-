@@ -48,12 +48,10 @@ const cartSlice = createSlice({
         (item) => item.courseDetails?._id === courseId
       );
 
-      console.log("Index in remove cart : ", index);
-
       if (index >= 0) {
         // If the course is found in the cart, remove it
         state.totalItems--;
-        state.total -= state.cart[index].price;
+        state.total -= state.cart[index].courseDetails?.price; // Update the total price by subtracting the price of the removed course
         state.cart.splice(index, 1);
         // Update to localstorage
         localStorage.setItem("cart", JSON.stringify(state.cart));
@@ -63,6 +61,7 @@ const cartSlice = createSlice({
         toast.success("Course removed from cart");
       }
     },
+
     resetCart: (state) => {
       state.cart = [];
       state.total = 0;

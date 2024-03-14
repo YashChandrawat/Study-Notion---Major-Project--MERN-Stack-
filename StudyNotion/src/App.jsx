@@ -28,6 +28,7 @@ import ViewCourse from "./Pages/ViewCourse";
 import VideoDetails from "./Components/Core/ViewCourse/VideoDetails";
 import Instructor from "./Components/Core/Dashboard/InstructorDashboard/Instructor";
 import CategoryCatalog from "./Pages/CategoryCatalog";
+import Example from "./Components/Core/Dashboard/MainCart";
 
 function App() {
   const { user } = useSelector((state) => state.profile);
@@ -61,6 +62,14 @@ function App() {
             <OpenRoute>
               <ForgotPassword />
             </OpenRoute>
+          }
+        />
+        <Route
+          path="/cart-main"
+          element={
+            <PrivateRoute>
+              <Example />
+            </PrivateRoute>
           }
         />
         <Route

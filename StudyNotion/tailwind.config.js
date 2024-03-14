@@ -136,6 +136,12 @@ module.exports = {
         600: "#FFA500",
         700: "#0000ee",
       },
+      button: {
+        5: "#9AC4F8",
+        50: "#C4D4ED",
+        100: "#A4CBEF",
+        800: "#1C3E5F",
+      },
     },
     extend: {
       maxWidth: {

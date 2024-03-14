@@ -3,7 +3,6 @@ import { FaBookOpen, FaLock, FaPlay } from "react-icons/fa";
 import { LuBadgeCheck } from "react-icons/lu";
 import { useNavigate } from "react-router-dom";
 import Footer from "../Components/Common/Footer";
-import HighLightText from "../Components/Core/HomePage/HighLightText";
 const Home = () => {
   const Navigate = useNavigate();
   return (
@@ -12,7 +11,9 @@ const Home = () => {
         {/* Section 1 - Hero Section */}
         <div className="w-full min-h-screen flex justify-center items-center flex-col gap-4 px-4">
           <div>
-            <p className="text-xl text-center text-caribbeangreen-400">EDUCATION & ONLINE COURSE</p>
+            <p className="text-xl text-center text-caribbeangreen-400">
+              EDUCATION & ONLINE COURSE
+            </p>
           </div>
           <div>
             <p className="text-5xl md:text-8xl leading-tight md:w-[50%] w-[full] mx-auto text-center text-white font-bold">
@@ -27,10 +28,13 @@ const Home = () => {
             </p>
           </div>
           <div className="flex flex-col md:flex-row gap-8 mt-5">
-            <button className="p-3 px-4 border border-solid border-yellow-50 rounded-2xl text-richblack-700 bg-yellow-50 hover:bg-yellow-100">
+            <button
+              className="p-3 px-4 border border-solid border-yellow-50 rounded-2xl text-richblack-700 bg-yellow-50 hover:bg-yellow-100"
+              onClick={() => Navigate("/signup")}
+            >
               Join For Free
             </button>
-            <button className="text-sm">
+            <button className="text-sm" onClick={() => Navigate("/login")}>
               <u>Learn More</u>
             </button>
           </div>
@@ -49,9 +53,10 @@ const Home = () => {
                 Your Online Learning Partner
               </h1>
               <p className="text-gray-600 text-center md:text-left">
-                Egestas faucibus nisl et ultricies. Tempus lectus condimentum
-                tristique mauris id vitae. Id pulvinar a eget vitae pellentesque
-                ridiculus platea. Vulputate cursus.
+                We are a team of passionate educators, technologists, and
+                innovators committed to revolutionizing the way people learn.
+                Our collective expertise spans various fields, including
+                education, technology, designs and so on.
               </p>
             </div>
 
@@ -95,8 +100,9 @@ const Home = () => {
                 Online Courses
               </h1>
               <p className="text-gray-600 text-center md:text-left">
-                Egestas faucibus nisl et ultricies. Tempus lectus condimentum
-                tristique mauris id vitae. Id pulvinar eget vitae.
+                Online Courses are designed to be engaging, interactive to meet
+                the diverse needs of learners. They cover a wide range of
+                subjects to enhance the practical knowledge.
               </p>
             </div>
 
@@ -109,8 +115,9 @@ const Home = () => {
                 Upgrade Skills
               </h1>
               <p className="text-gray-600 text-center md:text-left">
-                Egestas faucibus nisl et ultricies. Tempus lectus condimentum
-                tristique mauris id vitae. Id pulvinar eget vitae.
+                These Courses helps in upgrading your skills by providing
+                structure learning experiences designed to impart new knowledge,
+                develop abilities and enhance competencies.
               </p>
             </div>
 
@@ -141,9 +148,9 @@ const Home = () => {
               Your Online Learning Journey Made Easy
             </h1>
             <p className="text-gray-700 text-lg">
-              Egestas faucibus nisl et ultricies. Tempus lectus condimentum
-              tristique mauris id vitae. Id pulvinar a eget vitae pellentesque
-              ridiculus platea. Vulputate cursus.
+              Online courses offer a flexible and convenient way for learners to
+              acquire new knowledge and skills, regardless of their location or
+              schedule.
             </p>
           </div>
 
@@ -158,8 +165,8 @@ const Home = () => {
                 Choose Your Course
               </h2>
               <p className="text-gray-700">
-                Egestas faucibus nisl et ultricies. Tempus lectus condimentum
-                tristique.
+                You can choose any course according to your need and
+                requirements.
               </p>
             </div>
 
@@ -172,8 +179,8 @@ const Home = () => {
                 Sign Up and Pay
               </h2>
               <p className="text-gray-700">
-                Egestas faucibus nisl et ultricies. Tempus lectus condimentum
-                tristique.
+                To start your Online learning journey, Sign Up the Course you
+                choosed.
               </p>
             </div>
 
@@ -186,8 +193,8 @@ const Home = () => {
                 Learn and Engage
               </h2>
               <p className="text-gray-700">
-                Egestas faucibus nisl et ultricies. Tempus lectus condimentum
-                tristique.
+                Here you can start your online learning journey to develop your
+                skills.
               </p>
             </div>
           </div>
@@ -215,10 +222,9 @@ const Home = () => {
                 Your Learning Journey, Your Way
               </h1>
               <p className="text-gray-700 text-md">
-                Nibh consectetur morbi fusce aliquet scelerisque. Quis dis orci
-                eleifend vel at sed et. Laoreet tristique ut fringilla augue
-                vitae. Turpis volutpat morbi risus imperdiet viverra odio.
-                Fringilla sit ut mattis.
+                At our online learning platform, we believe in empowering
+                learners to chart their own path and pursue their learning goals
+                on their terms.
               </p>
             </div>
 
@@ -232,8 +238,9 @@ const Home = () => {
                   </p>
                 </div>
                 <p className="text-gray-700 ml-0 md:ml-10">
-                  Enim amet enim volutpat luctus ipsum pellentesque massa nisl
-                  sed. Sit ut nibh odio morbi diam. Mi euismod diam.
+                  Our online learning platform is committed to providing
+                  high-quality content courses that are designed to meet the
+                  needs of learners at every level.
                 </p>
               </div>
 
@@ -245,8 +252,9 @@ const Home = () => {
                   </p>
                 </div>
                 <p className="text-gray-700 ml-0 md:ml-10">
-                  Enim amet enim volutpat luctus ipsum pellentesque massa nisl
-                  sed. Sit ut nibh odio morbi diam. Mi euismod diam.
+                  These Courses involves active participation, engagement, and
+                  collaboration between learners, instructors, and course
+                  materials.
                 </p>
               </div>
 
@@ -258,8 +266,9 @@ const Home = () => {
                   </p>
                 </div>
                 <p className="text-gray-700 ml-0 md:ml-10">
-                  Enim amet enim volutpat luctus ipsum pellentesque massa nisl
-                  sed. Sit ut nibh odio morbi diam. Mi euismod diam.
+                  It involves providing comprehensive assistance, guidance, and
+                  resources to learners to ensure their success and satisfaction
+                  throughout their learning journey.
                 </p>
               </div>
             </div>
@@ -267,7 +276,7 @@ const Home = () => {
         </div>
 
         {/* Section 5 - Join Our Community */}
-        <div className="flex flex-col md:flex-row md:w-[90%] md:mx-auto justify-center items-center h-screen leading-8">
+        <div className="flex flex-col md:flex-row md:w-[90%] md:mx-auto justify-center items-center md:h-screen sm:h-auto leading-8">
           {/* Top Section of Section 5 */}
           <div className="text-center md:text-start mb-12 leading-10 md:w-[50%] md:pr-12">
             <p className="text-lg text-caribbeangreen-400 uppercase font-semibold mb-2">
@@ -277,9 +286,8 @@ const Home = () => {
               Join Study Notion Community
             </h1>
             <p className="text-gray-700">
-              Egestas faucibus nisl et ultricies. Tempus lectus condimentum
-              tristique mauris id vitae. Id pulvinar a eget vitae pellentesque
-              ridiculus platea. Vulputate cursus.
+              To Join our Community and Start your learning journey You can
+              contact to us.
             </p>
             <div className="flex flex-col items-center md:items-start mt-6 md:mt-2 gap-4">
               <button
@@ -404,7 +412,7 @@ export default Home;
 //               active: false,
 //             }}
 //             codeColor={"text-yellow-25"}
-//             codeblock={`<!DOCTYPE html>\n <html lang="en">\n<head>\n<title>This is myPage</title>\n</head>\n<body>\n<h1><a href="/">Header</a></h1>\n<nav> <a href="/one">One</a> <a href="/two">Two</a> <a href="/three">Three</a>\n</nav>\n</body>`}
+//             codeblock={<!DOCTYPE html>\n <html lang="en">\n<head>\n<title>This is myPage</title>\n</head>\n<body>\n<h1><a href="/">Header</a></h1>\n<nav> <a href="/one">One</a> <a href="/two">Two</a> <a href="/three">Three</a>\n</nav>\n</body>}
 //             backgroundGradient={<div className="codeblock1 absolute"></div>}
 //           />
 //         </div>
@@ -433,7 +441,7 @@ export default Home;
 //               active: false,
 //             }}
 //             codeColor={"text-white"}
-//             codeblock={`import React from "react";\n import CTAButton from "./Button";\nimport TypeAnimation from "react-type";\nimport { FaArrowRight } from "react-icons/fa";\n\nconst Home = () => {\nreturn (\n<div>Home</div>\n)\n}\nexport default Home;`}
+//             codeblock={import React from "react";\n import CTAButton from "./Button";\nimport TypeAnimation from "react-type";\nimport { FaArrowRight } from "react-icons/fa";\n\nconst Home = () => {\nreturn (\n<div>Home</div>\n)\n}\nexport default Home;}
 //             backgroundGradient={<div className="codeblock2 absolute"></div>}
 //           />
 //         </div>

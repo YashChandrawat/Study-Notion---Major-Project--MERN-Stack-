@@ -160,7 +160,7 @@ const ContactUsForm = () => {
       <button
         disabled={loading}
         type="submit"
-        className="bg-yellow-50 text-richblack-900 w-fit p-2 mx-auto rounded-md font-semibold"
+        className="bg-button-5 text-richblack-900 w-fit p-2 mx-auto rounded-md font-semibold"
       >
         {loading ? "Sending..." : "Send Message"}
       </button>

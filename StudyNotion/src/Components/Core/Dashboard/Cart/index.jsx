@@ -20,9 +20,15 @@ export default function Cart() {
           <RenderTotalAmount />
         </div>
       ) : (
-        <p className="mt-8 text-center text-lg text-richblack-100">
-          Your cart is empty
-        </p>
+        <div className="flex flex-col items-center justify-center h-screen text-white">
+          <img
+            src="https://cdni.iconscout.com/illustration/free/thumb/free-empty-cart-4085814-3385483.png" // Add your image path here
+            alt="Empty Cart"
+            className="w-64 h-64 object-contain mb-4"
+          />
+          <h1 className="text-2xl font-bold mb-2">Your Cart is Empty</h1>
+          <p className="text-gray-400">Start adding courses to your cart.</p>
+        </div>
       )}
     </>
   );

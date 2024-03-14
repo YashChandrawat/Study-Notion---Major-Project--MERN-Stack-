@@ -73,9 +73,8 @@ const About = () => {
                 Benefits of Learning with Study Notion
               </h1>
               <p className="text-gray-700">
-                Egestas faucibus nisl et ultricies. Tempus lectus condimentum
-                tristique mauris id vitae. Id pulvinar a eget vitae pellentesque
-                ridiculus platea. Vulputate cursus.
+                Study Notion provides the creative and flexible courses to the
+                learners according tt their needs. It has
               </p>
             </div>
             {/* Bottom Section of Left Side */}
@@ -112,19 +111,19 @@ const About = () => {
               {/* Capsule Section */}
               <div className="flex flex-wrap gap-4">
                 <div className="bg-caribbeangreen-100 py-2 px-4 rounded-full text-gray-700">
-                  Digital Marketing
+                  Web Development
                 </div>
                 <div className="bg-caribbeangreen-5 py-2 px-4 rounded-full text-black">
-                  Email Marketing
+                  Graphic Design
                 </div>
                 <div className="bg-caribbeangreen-5 py-2 px-4 rounded-full text-black">
-                  Digital Illustration
+                  Android Development
                 </div>
                 <div className="bg-caribbeangreen-5 py-2 px-4 rounded-full text-black">
-                  Digital Illustration
+                  Programming Language
                 </div>
                 <div className="bg-caribbeangreen-5 py-2 px-4 rounded-full text-black">
-                  Film & Video
+                  Technologies
                 </div>
                 <div className="bg-caribbeangreen-5 py-2 px-4 rounded-full text-black">
                   Social Media
@@ -149,8 +148,8 @@ const About = () => {
                   How To Get Started
                 </h2>
                 <p className="text-gray-700 mb-4">
-                  Egestas faucibus nisl et ultricies. Tempus lectus condimentum
-                  tristique.
+                  Sign Up and start your online learning journey to empower your
+                  skills.
                 </p>
                 <button className="text-customColor-400 font-bold py-2 px-4 rounded-md">
                   Learn More
@@ -162,19 +161,19 @@ const About = () => {
                   Become Instructor
                 </h2>
                 <p className="text-gray-700 mb-4">
-                  Egestas faucibus nisl et ultricies. Tempus lectus condimentum
-                  tristique.
+                  Create new courses and upload them for learners to empower
+                  their skills.
                 </p>
                 <button className="text-customColor-400 font-bold py-2 px-4 rounded-md">
                   Learn More
                 </button>
               </div>
               {/* Card 3 */}
-              <div className="mb-6 bg-richblack-700 p-4 rounded-lg">
+              <div className="mb-6 bg-richblack-700 p-4 rounded-lg ">
                 <h2 className="text-xl font-semibold mb-2">Read More</h2>
                 <p className="text-gray-700 mb-4">
-                  Egestas faucibus nisl et ultricies. Tempus lectus condimentum
-                  tristique.
+                  Connect with us to know more about us and our courses in
+                  detail.
                 </p>
                 <button className="text-customColor-400 font-bold py-2 px-4 rounded-md">
                   Learn More
@@ -190,9 +189,8 @@ const About = () => {
                 Try It For Free
               </h1>
               <p className="text-gray-700 mb-4 w-[60%] mx-auto">
-                Egestas faucibus nisl et ultricies. Tempus lectus condimentum
-                tristique mauris id vitae. Id pulvinar a eget vitae pellentesque
-                ridiculus platea. Vulputate cursus.
+                Enroll in any of the course to gain the access to the course
+                materials and resources.
               </p>
               <button className="bg-yellow-50 hover:bg-yellow-5 text-black w-fit mx-auto font-bold py-2 px-4 rounded-md">
                 Join Now
