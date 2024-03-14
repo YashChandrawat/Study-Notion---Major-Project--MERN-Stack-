@@ -127,11 +127,10 @@ const Home = () => {
                 <LuBadgeCheck />
               </p>
               <h1 className="text-xl md:text-2xl font-bold mb-2">
-                Certification
+                Experience
               </h1>
               <p className="text-gray-600 text-center md:text-left">
-                Egestas faucibus nisl et ultricies. Tempus lectus condimentum
-                tristique mauris id vitae. Id pulvinar eget vitae.
+                These Courses helps in gaining experience in different fields through flexible and interactive learning which enhance the practical knowledge.
               </p>
             </div>
           </div>
