@@ -19,7 +19,7 @@ import {
   IoMdLogOut,
 } from "react-icons/io";
 import { GrCatalog } from "react-icons/gr";
-import { SiAboutdotme } from "react-icons/si";
+import { SiAboutdotme, SiCoursera } from "react-icons/si";
 import { SiGnuprivacyguard } from "react-icons/si";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../services/operations/authAPI";
@@ -85,6 +85,13 @@ export function SideDrawer() {
               >
                 <IoCartOutline size={24} />
                 <Link to={"/login"}>Cart</Link>
+              </ListItem>
+              <ListItem
+                className="flex gap-4 items-center"
+                onClick={() => setOpen(!open)}
+              >
+                <SiCoursera size={24} />
+                <Link to={"/dashboard/enrolled-courses"}>Enrolled Courses</Link>
               </ListItem>
               <ListItem
                 className="flex gap-4 items-center"
