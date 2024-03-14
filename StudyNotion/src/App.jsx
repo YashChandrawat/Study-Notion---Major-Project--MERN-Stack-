@@ -16,7 +16,6 @@ import Dashboard from "./Pages/Dashboard";
 import Error from "./Pages/Error";
 import Settings from "./Components/Core/Dashboard/Settings";
 import EnrolledCourses from "./Components/Core/Dashboard/EnrolledCourses";
-import Cart from "./Components/Core/Dashboard/Cart";
 import { ACCOUNT_TYPE } from "./utils/constants";
 import { useSelector } from "react-redux";
 import AddCourse from "./Components/Core/Dashboard/AddCourse";
@@ -28,7 +27,7 @@ import ViewCourse from "./Pages/ViewCourse";
 import VideoDetails from "./Components/Core/ViewCourse/VideoDetails";
 import Instructor from "./Components/Core/Dashboard/InstructorDashboard/Instructor";
 import CategoryCatalog from "./Pages/CategoryCatalog";
-import Example from "./Components/Core/Dashboard/MainCart";
+import MainCart from "./Components/Core/Dashboard/MainCart";
 
 function App() {
   const { user } = useSelector((state) => state.profile);
@@ -64,14 +63,7 @@ function App() {
             </OpenRoute>
           }
         />
-        <Route
-          path="/cart-main"
-          element={
-            <PrivateRoute>
-              <Example />
-            </PrivateRoute>
-          }
-        />
+
         <Route
           path="/update-password/:id"
           element={
@@ -102,7 +94,7 @@ function App() {
 
           {user?.accountType === ACCOUNT_TYPE.STUDENT && (
             <>
-              <Route path="dashboard/cart" element={<Cart />} />
+              <Route path="dashboard/cart" element={<MainCart />} />
               <Route
                 path="dashboard/enrolled-courses"
                 element={<EnrolledCourses />}
