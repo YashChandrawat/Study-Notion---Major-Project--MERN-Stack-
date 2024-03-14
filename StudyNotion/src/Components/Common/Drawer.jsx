@@ -11,7 +11,13 @@ import {
   Chip,
 } from "@material-tailwind/react";
 import { Link, useNavigate } from "react-router-dom";
-import { IoMdContact, IoMdHome, IoMdLogIn, IoMdLogOut } from "react-icons/io";
+import {
+  IoMdClose,
+  IoMdContact,
+  IoMdHome,
+  IoMdLogIn,
+  IoMdLogOut,
+} from "react-icons/io";
 import { GrCatalog } from "react-icons/gr";
 import { SiAboutdotme } from "react-icons/si";
 import { SiGnuprivacyguard } from "react-icons/si";
@@ -38,22 +44,9 @@ export function SideDrawer() {
           <Typography variant="h5" color="blue-gray">
             <img src={logo} alt="Logo" className="w-[150px]" />
           </Typography>
-          <IconButton variant="text" color="blue-gray" onClick={closeDrawer}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth={2}
-              stroke="currentColor"
-              className="h-5 w-5"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          </IconButton>
+          <button>
+            <IoMdClose onClick={closeDrawer} />
+          </button>
         </div>
         <List>
           <ListItem

@@ -35,38 +35,32 @@ export default function EnrolledCourses() {
           You have not enrolled in any course yet.
         </p>
       ) : (
-        <div className="my-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 my-8">
           {enrolledCourses.map((course, i, arr) => (
             <div
-              className="border border-richblack-700 mb-4 rounded-lg overflow-hidden"
+              className="border border-richblack-700 rounded-lg overflow-hidden shadow-md cursor-pointer hover:shadow-lg transition duration-300"
               key={i}
+              onClick={() => {
+                navigate(
+                  `/view-course/${course?._id}/section/${course.courseContent?.[0]?._id}/sub-section/${course.courseContent?.[0]?.subSection?.[0]?._id}`
+                );
+              }}
             >
-              <div
-                className="cursor-pointer p-4 flex items-center"
-                onClick={() => {
-                  navigate(
-                    `/view-course/${course?._id}/section/${course.courseContent?.[0]?._id}/sub-section/${course.courseContent?.[0]?.subSection?.[0]?._id}`
-                  );
-                }}
-              >
-                <img
-                  src={course.thumbnail}
-                  alt="course_img"
-                  className="h-20 w-20 rounded-lg object-cover mr-4"
-                />
-                <div className="flex-1">
-                  <p className="font-semibold text-lg text-richblack-300">
-                    {course.courseName}
-                  </p>
-                  <p className="text-md text-richblack-300 mt-1">
-                    {course.courseDescription.length > 100
-                      ? `${course.courseDescription.slice(0, 100)}...`
-                      : course.courseDescription}
-                  </p>
-                </div>
-              </div>
-              <div className="p-4 border-t border-richblack-700">
-                <div className="flex justify-between items-center mb-2">
+              <img
+                src={course.thumbnail}
+                alt="course_img"
+                className="h-40 w-full object-cover"
+              />
+              <div className="p-4">
+                <p className="font-semibold text-lg text-richblack-300 mb-2">
+                  {course.courseName}
+                </p>
+                <p className="text-md text-richblack-300 mb-4">
+                  {course.courseDescription.length > 100
+                    ? `${course.courseDescription.slice(0, 100)}...`
+                    : course.courseDescription}
+                </p>
+                <div className="flex justify-between items-center">
                   <p className="text-richblack-500">
                     Duration: {course?.totalDuration}
                   </p>
@@ -78,6 +72,8 @@ export default function EnrolledCourses() {
                   completed={course.progressPercentage || 0}
                   height="8px"
                   isLabelVisible={false}
+                  bgColor="#34D399" // Green color
+                  className="mt-2"
                 />
               </div>
             </div>
