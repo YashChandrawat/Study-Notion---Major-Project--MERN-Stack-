@@ -153,13 +153,7 @@ const VideoDetails = () => {
 
   return (
     <div className="flex flex-col gap-5 text-white">
-      {!videoData ? (
-        <img
-          src={previewSource}
-          alt="Preview"
-          className="h-full w-full rounded-md object-cover"
-        />
-      ) : (
+      {videoData ? (
         <div className="lg:w-[80%] lg:mx-auto lg:h-[80] sm:w-[full]">
           <Player
             ref={playerRef}
@@ -169,64 +163,59 @@ const VideoDetails = () => {
             src={videoData?.videoUrl}
           >
             <BigPlayButton position="center" />
-            {/* Render When Video Ends */}
-            {videoEnded && (
-              <div
-                style={{
-                  backgroundImage:
-                    "linear-gradient(to top, rgb(0, 0, 0), rgba(0,0,0,0.7), rgba(0,0,0,0.5), rgba(0,0,0,0.1)",
-                }}
-                className="full absolute inset-0 z-[100] grid h-full place-content-center font-inter"
-              >
-                {!completedLectures.includes(subSectionId) && (
-                  <IconBtn
-                    disabled={loading}
-                    onclick={() => handleLectureCompletion()}
-                    text={!loading ? "Mark As Completed" : "Loading..."}
-                    customClasses="text-xl max-w-max px-4 mx-auto"
-                  />
-                )}
-                <IconBtn
-                  disabled={loading}
-                  onclick={() => {
-                    if (playerRef?.current) {
-                      // set the current time of the video to 0
-                      playerRef?.current?.seek(0);
-                      setVideoEnded(false);
-                    }
-                  }}
-                  text="Rewatch"
-                  customClasses="text-xl max-w-max px-4 mx-auto mt-2"
-                />
-                <div className="mt-10 flex min-w-[250px] justify-center gap-x-4 text-xl">
-                  {!isFirstVideo() && (
-                    <button
-                      disabled={loading}
-                      onClick={goToPrevVideo}
-                      className="blackButton"
-                    >
-                      Prev
-                    </button>
-                  )}
-                  {!isLastVideo() && (
-                    <button
-                      disabled={loading}
-                      onClick={goToNextVideo}
-                      className="blackButton"
-                    >
-                      Next
-                    </button>
-                  )}
-                </div>
-              </div>
-            )}
           </Player>
+          {videoEnded && (
+            <div className="absolute inset-0 z-[100] flex flex-col items-center justify-center bg-black bg-opacity-60">
+              <IconBtn
+                disabled={loading}
+                onclick={() => handleLectureCompletion()}
+                text={!loading ? "Mark As Completed" : "Loading..."}
+                customClasses="text-xl max-w-max px-4 mx-auto"
+              />
+              <IconBtn
+                disabled={loading}
+                onclick={() => {
+                  if (playerRef?.current) {
+                    playerRef?.current?.seek(0);
+                    setVideoEnded(false);
+                  }
+                }}
+                text="Rewatch"
+                customClasses="text-xl max-w-max px-4 mx-auto mt-2"
+              />
+              <div className="flex min-w-[250px] justify-center gap-x-4 text-xl mt-10">
+                {!isFirstVideo() && (
+                  <button
+                    disabled={loading}
+                    onClick={goToPrevVideo}
+                    className="blackButton"
+                  >
+                    Prev
+                  </button>
+                )}
+                {!isLastVideo() && (
+                  <button
+                    disabled={loading}
+                    onClick={goToNextVideo}
+                    className="blackButton"
+                  >
+                    Next
+                  </button>
+                )}
+              </div>
+            </div>
+          )}
         </div>
+      ) : (
+        <img
+          src={placeholderImage}
+          alt="Preview"
+          className="h-full w-full rounded-md object-cover"
+        />
       )}
-
-      <div className="flex flex-col lg:mx-[10%] gap-4">
-        <h1 className="mt-2 text-3xl font-semibold">{videoData?.title}</h1>
-        <p className=" pb-2">{videoData?.description}</p>
+      <div className="lg:mx-[10%] flex flex-col gap-4">
+        <h1 className="text-3xl font-semibold">{videoData?.title}</h1>
+        <p className="pb-2">{videoData?.description}</p>
         <SetReview setReviewModal={setReviewModal} />
       </div>
       {reviewModal && <CourseReviewModal setReviewModal={setReviewModal} />}
