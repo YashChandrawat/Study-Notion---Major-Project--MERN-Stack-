@@ -84,7 +84,7 @@ export function SideDrawer() {
                 onClick={() => setOpen(!open)}
               >
                 <IoCartOutline size={24} />
-                <Link to={"/login"}>Cart</Link>
+                <Link to={"/dashboard/cart"}>Cart</Link>
               </ListItem>
               <ListItem
                 className="flex gap-4 items-center"

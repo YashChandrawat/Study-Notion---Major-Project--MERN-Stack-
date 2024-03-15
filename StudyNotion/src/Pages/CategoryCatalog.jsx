@@ -31,6 +31,11 @@ const CategoryCatalog = () => {
       image:
         "https://media.licdn.com/dms/image/D5612AQHjDGhc8cNfJA/article-cover_image-shrink_720_1280/0/1704439037481?e=2147483647&v=beta&t=wSs9ZAGGWfx_9TAfotJLRY87JtMQPhKo7wNAh1-inU0",
     },
+    {
+      name: "AIML",
+      image:
+        "https://media.licdn.com/dms/image/D4D12AQHYC_ZczxV2zw/article-cover_image-shrink_720_1280/0/1695524296879?e=2147483647&v=beta&t=VJkWc3l89UdKGn2pEkDo4IWINkztx2V3u0tdzPL8ILA",
+    },
   ];
   const navigate = useNavigate();
   const [response, setResponse] = useState([]);

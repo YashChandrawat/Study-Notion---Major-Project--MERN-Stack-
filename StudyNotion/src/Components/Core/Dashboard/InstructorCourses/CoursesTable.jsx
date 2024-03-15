@@ -9,8 +9,8 @@ import { FiEdit2 } from "react-icons/fi";
 import { HiClock } from "react-icons/hi";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
-import { formatDate } from "../../../../services/formatDate";
 
+import { formatDate } from "../../../../services/formatDate";
 import {
   deleteCourse,
   fetchInstructorCourses,
@@ -30,7 +30,6 @@ export default function CoursesTable({ courses, setCourses }) {
     setLoading(true);
     await deleteCourse({ courseId: courseId }, token);
     const result = await fetchInstructorCourses(token);
-    // console.log("Result", result);
     if (result) {
       setCourses(result);
     }

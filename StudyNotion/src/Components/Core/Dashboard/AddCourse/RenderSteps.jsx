@@ -25,59 +25,41 @@ export default function RenderSteps() {
 
   return (
     <>
-      <div className="relative mb-2 flex w-full justify-center">
+      <div className="flex flex-col md:items-center sm:justify-start justify-center space-y-4 mt-8 md:space-y-0 md:flex-row md:justify-between">
         {steps.map((item) => (
-          <>
-            <div className="flex flex-col items-center " key={item.id}>
-              <button
-                className={`grid cursor-default aspect-square w-[34px] place-items-center rounded-full border-[1px] ${
-                  step === item.id
-                    ? "border-yellow-50 bg-yellow-900 text-yellow-50"
-                    : "border-richblack-700 bg-richblack-800 text-richblack-300"
-                } ${step > item.id && "bg-yellow-50 text-yellow-50"}} `}
-              >
-                {step > item.id ? (
-                  <FaCheck className="font-bold text-richblack-900" />
-                ) : (
-                  item.id
-                )}
-              </button>
-            </div>
-            {item.id !== steps.length && (
-              <>
-                <div
-                  className={`h-[calc(34px/2)] w-[33%]  border-dashed border-b-2 ${
-                    step > item.id ? "border-yellow-50" : "border-richblack-500"
-                  } `}
-                ></div>
-              </>
-            )}
-          </>
+          <div key={item.id} className="flex items-center space-x-2">
+            <button
+              className={`h-8 w-8 md:h-12 md:w-12 rounded-full focus:outline-none flex items-center justify-center ${
+                step === item.id
+                  ? "bg-yellow-500 text-white"
+                  : "bg-gray-200 text-gray-600"
+              }`}
+            >
+              {step > item.id ? (
+                <FaCheck className="w-4 h-4 md:w-6 md:h-6" />
+              ) : (
+                <span className="text-xs md:text-lg font-bold">{item.id}</span>
+              )}
+            </button>
+            <p
+              className={`text-xs md:text-sm ${
+                step >= item.id
+                  ? "text-gray-800 font-semibold"
+                  : "text-gray-400"
+              }`}
+            >
+              {item.title}
+            </p>
+          </div>
         ))}
       </div>
 
-      <div className="relative mb-16 flex w-full select-none justify-between">
-        {steps.map((item) => (
-          <>
-            <div
-              className="flex min-w-[130px] flex-col items-center gap-y-2"
-              key={item.id}
-            >
-              <p
-                className={`text-sm ${
-                  step >= item.id ? "text-richblack-5" : "text-richblack-500"
-                }`}
-              >
-                {item.title}
-              </p>
-            </div>
-          </>
-        ))}
-      </div>
       {/* Render specific component based on current step */}
-      {step === 1 && <CourseInformationForm />}
-      {step === 2 && <CourseBuilderForm />}
-      {step === 3 && <PublishCourse />}
+      <div className="mt-8">
+        {step === 1 && <CourseInformationForm />}
+        {step === 2 && <CourseBuilderForm />}
+        {step === 3 && <PublishCourse />}
+      </div>
     </>
   );
 }
