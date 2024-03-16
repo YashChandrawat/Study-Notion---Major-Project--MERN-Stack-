@@ -207,6 +207,7 @@ import { apiConnector } from "../../services/apiConnector";
 import { categories } from "../../services/apis";
 import { FaChevronDown } from "react-icons/fa6";
 import { PiStudentFill } from "react-icons/pi";
+import { GoHubot } from "react-icons/go";
 
 // const subLinks = [
 //   {
@@ -319,14 +320,16 @@ const Navbar = () => {
         {/* Login/Signup and extras */}
         <div className="lg:flex md:flex gap-x-4 items-center hidden ">
           {user && user?.accountType != "Instructor" && (
-            <Link to={"/dashboard/cart"} className="relative">
-              <AiOutlineShoppingCart className="text-2xl text-richblack-100" />
-              {totalItems > 0 && (
-                <span className="absolute -bottom-2 -right-2 grid h-5 w-5 place-items-center overflow-hidden rounded-full bg-richblack-600 text-center text-xs font-bold text-yellow-100">
-                  {totalItems}
-                </span>
-              )}
-            </Link>
+            <>
+              <Link to={"/dashboard/cart"} className="relative">
+                <AiOutlineShoppingCart className="text-2xl text-richblack-100" />
+                {totalItems > 0 && (
+                  <span className="absolute -bottom-2 -right-2 grid h-5 w-5 place-items-center overflow-hidden rounded-full bg-richblack-600 text-center text-xs font-bold text-yellow-100">
+                    {totalItems}
+                  </span>
+                )}
+              </Link>
+            </>
           )}
           {token === null && (
             <Link to={"/login"}>
@@ -358,7 +361,7 @@ const Navbar = () => {
               {open && (
                 <div
                   onClick={(e) => e.stopPropagation()}
-                  className="absolute top-[118%] right-0 z-[1000] divide-y-[1px] divide-richblack-700 overflow-hidden rounded-md border-[1px] border-richblack-700 bg-richblack-800"
+                  className="absolute top-[118%] md:w-[130px] right-0 z-[1000] divide-y-[1px] divide-richblack-700 overflow-hidden rounded-md border-[1px] border-richblack-700 bg-richblack-800"
                   ref={ref}
                 >
                   <Link
@@ -370,6 +373,18 @@ const Navbar = () => {
                       Dashboard
                     </div>
                   </Link>
+                  <div className="flex w-full items-center gap-x-1 py-[10px] px-[12px] text-sm text-richblack-100 hover:bg-richblack-700 hover:text-richblack-25">
+                    <a
+                      href={"https://pdf-reader-major.onrender.com/"}
+                      className="flex gap-2  w-fit"
+                    >
+                      <GoHubot
+                        className="text-sm text-richblack-100"
+                        size={18}
+                      />
+                      Analyse PDF
+                    </a>
+                  </div>
                   <div
                     onClick={() => {
                       dispatch(logout(navigate));

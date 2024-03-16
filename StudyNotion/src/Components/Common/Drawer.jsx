@@ -26,6 +26,7 @@ import { logout } from "../../services/operations/authAPI";
 import { FaBars } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
 import logo from "../../assets/Logo/Logo-Full-Dark.png";
+import { GoHubot } from "react-icons/go";
 
 export function SideDrawer() {
   const [open, setOpen] = React.useState(false);
@@ -76,6 +77,13 @@ export function SideDrawer() {
           >
             <IoMdContact size={24} />
             <Link to={"/contact"}>Contact</Link>
+          </ListItem>
+          <ListItem
+            className="flex gap-4 items-center"
+            onClick={() => setOpen(!open)}
+          >
+            <GoHubot size={24} />
+            <a href="https://pdf-reader-major.onrender.com/">Analyse PDF</a>
           </ListItem>
           {user ? (
             <>
