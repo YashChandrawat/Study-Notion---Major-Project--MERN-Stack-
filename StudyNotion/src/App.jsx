@@ -28,6 +28,7 @@ import VideoDetails from "./Components/Core/ViewCourse/VideoDetails";
 import Instructor from "./Components/Core/Dashboard/InstructorDashboard/Instructor";
 import CategoryCatalog from "./Pages/CategoryCatalog";
 import MainCart from "./Components/Core/Dashboard/MainCart";
+import BookAppointmentForm from "./Pages/BookAppointment";
 
 function App() {
   const { user } = useSelector((state) => state.profile);
@@ -130,6 +131,15 @@ function App() {
             </>
           )}
         </Route>
+        <Route
+          path="/book-appointment/:id"
+          element={
+            <PrivateRoute>
+              <BookAppointmentForm />
+            </PrivateRoute>
+          }
+        />
+
         <Route path="*" element={<Error />} />
       </Routes>
     </div>

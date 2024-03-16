@@ -36,6 +36,11 @@ const CategoryCatalog = () => {
       image:
         "https://media.licdn.com/dms/image/D4D12AQHYC_ZczxV2zw/article-cover_image-shrink_720_1280/0/1695524296879?e=2147483647&v=beta&t=VJkWc3l89UdKGn2pEkDo4IWINkztx2V3u0tdzPL8ILA",
     },
+    {
+      name: "AIML",
+      image:
+        "https://img.freepik.com/free-photo/young-handsome-physician-medical-robe-with-stethoscope_1303-17818.jpg?t=st=1710565988~exp=1710569588~hmac=a2c3355ea15f175778156dc65d3ea807402d7555ef958daf8578ef81e5d26c71&w=1060",
+    },
   ];
   const navigate = useNavigate();
   const [response, setResponse] = useState([]);

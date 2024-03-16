@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, Route, useNavigate, useParams } from "react-router-dom";
 
 import "video-react/dist/video-react.css";
 import { useLocation } from "react-router-dom";
@@ -11,6 +11,8 @@ import { updateCompletedLectures } from "../../../slices/viewCourseSlice";
 import IconBtn from "../../Common/IconBtn";
 import SetReview from "./SetReview";
 import CourseReviewModal from "./CourseReviewModal";
+import BookAppointmentForm from "../../../Pages/BookAppointment";
+import { setDoctorEmail } from "../../../slices/courseSlice";
 
 const VideoDetails = () => {
   const { courseId, sectionId, subSectionId } = useParams();
@@ -47,6 +49,8 @@ const VideoDetails = () => {
       }
     })();
   }, [courseSectionData, courseEntireData, location.pathname]);
+
+  // const doctorEmail = courseEntireData?.instructor?.email;
 
   const isFirstVideo = () => {
     const currentSectionIndx = courseSectionData.findIndex(
@@ -151,6 +155,16 @@ const VideoDetails = () => {
     setLoading(false);
   };
 
+  const doctorEmail = courseEntireData?.instructor?.email;
+
+  const handleBookAppointment = () => {
+    console.log(
+      "Receiver inside video Details: ",
+      courseEntireData?.instructor?.email
+    );
+    navigate(`/book-appointment/${courseId}`);
+  };
+
   return (
     <div className="flex flex-col gap-5 text-white">
       {videoData ? (
@@ -216,7 +230,27 @@ const VideoDetails = () => {
       <div className="lg:mx-[10%] flex flex-col gap-4">
         <h1 className="text-3xl font-semibold">{videoData?.title}</h1>
         <p className="pb-2">{videoData?.description}</p>
-        <SetReview setReviewModal={setReviewModal} />
+
+        {courseEntireData?.category?.name === "Health & Well Being" ? (
+          <>
+            <div className="flex gap-2 items-center">
+              <SetReview setReviewModal={setReviewModal} />
+              {/* <Link
+                to={"/book-appointment"}
+                element={<BookAppointmentForm doctorEmail={courseId} />}
+              >
+                BookAppointmentForm
+              </Link> */}
+              <IconBtn onclick={() => handleBookAppointment()}>
+                Book Appointment
+              </IconBtn>
+            </div>
+          </>
+        ) : (
+          <>
+            <SetReview setReviewModal={setReviewModal} />
+          </>
+        )}
       </div>
       {reviewModal && <CourseReviewModal setReviewModal={setReviewModal} />}
     </div>

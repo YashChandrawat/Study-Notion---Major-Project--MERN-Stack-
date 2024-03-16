@@ -24,6 +24,10 @@ export const studentEndpoints = {
   SEND_PAYMENT_SUCCESS_EMAIL_API: BASE_URL + "/payment/sendPaymentSuccessEmail",
 };
 
+export const appointmentEndpoint = {
+  BOOK_APPOINTMENT_API: BASE_URL + "/consult-doctor",
+};
+
 // COURSE ENDPOINTS
 export const courseEndpoints = {
   GET_ALL_COURSE_API: BASE_URL + "/course/getAllCourses",

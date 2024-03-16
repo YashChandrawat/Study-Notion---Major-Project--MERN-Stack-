@@ -5,7 +5,7 @@ const SetReview = ({ setReviewModal }) => {
     <div className="text-white">
       <IconBtn
         text="Add Review"
-        customClasses={"relative bottom-3"}
+        // customClasses={"relative bottom-3"}
         onclick={() => setReviewModal(true)}
       />
     </div>
